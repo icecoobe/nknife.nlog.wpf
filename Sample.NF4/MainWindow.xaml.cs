@@ -4,6 +4,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Media;
+using NLogWpfViewer;
 
 namespace Sample
 {

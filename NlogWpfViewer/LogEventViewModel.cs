@@ -3,7 +3,7 @@ using System.Globalization;
 using System.Windows.Media;
 using NLog;
 
-namespace NlogViewer
+namespace NLogWpfViewer
 {
     public class LogEventViewModel
     {
@@ -25,12 +25,12 @@ namespace NlogViewer
         }
 
 
-        public string Time { get; private set; }
-        public string LoggerName { get; private set; }
-        public string Level { get; private set; }
-        public string FormattedMessage { get; private set; }
-        public Exception Exception { get; private set; }
-        public string ToolTip { get; private set; }
+        public string Time { get; }
+        public string LoggerName { get; }
+        public string Level { get; }
+        public string FormattedMessage { get; }
+        public Exception Exception { get; }
+        public string ToolTip { get; }
         public SolidColorBrush Background { get; private set; }
         public SolidColorBrush Foreground { get; private set; }
         public SolidColorBrush BackgroundMouseOver { get; private set; }
@@ -53,6 +53,7 @@ namespace NlogViewer
                 Background = Brushes.White;
                 BackgroundMouseOver = Brushes.LightGray;
             }
+
             Foreground = Brushes.Black;
             ForegroundMouseOver = Brushes.Black;
         }

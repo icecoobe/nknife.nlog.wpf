@@ -7,11 +7,11 @@ using System.Windows;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("NlogViewer")]
+[assembly: AssemblyTitle("NLogViewer")]
 [assembly: AssemblyDescription("A simple control to show logs from Nlog")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("ZSoft")]
-[assembly: AssemblyProduct("NlogViewer")]
+[assembly: AssemblyProduct("NLogViewer")]
 [assembly: AssemblyCopyright("Copyright © ZSoft 2013")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
