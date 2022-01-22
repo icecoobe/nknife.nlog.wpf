@@ -3,16 +3,16 @@ using System.Globalization;
 using System.Windows.Media;
 using NLog;
 
-namespace NLogWpfViewer
+namespace NKnife.NLogWpfViewer
 {
     public class LogEventViewModel
     {
-        private LogEventInfo logEventInfo;
+        private LogEventInfo _logEventInfo;
 
         public LogEventViewModel(LogEventInfo logEventInfo)
         {
             // TODO: Complete member initialization
-            this.logEventInfo = logEventInfo;
+            this._logEventInfo = logEventInfo;
 
             ToolTip = logEventInfo.FormattedMessage;
             Level = logEventInfo.Level.ToString();
@@ -23,7 +23,6 @@ namespace NLogWpfViewer
 
             SetupColors(logEventInfo);
         }
-
 
         public string Time { get; }
         public string LoggerName { get; }

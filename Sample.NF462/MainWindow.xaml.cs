@@ -1,22 +1,20 @@
-﻿using NLog;
-using System;
+﻿using System;
+using System.Media;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
-using System.Media;
-using NLogWpfViewer;
+using NKnife.NLogWpfViewer;
+using NLog;
 
 namespace Sample
 {
-
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    ///     Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
     {
-        Task _logTask;
-        CancellationTokenSource _cancelLogTask;
-
+        private CancellationTokenSource _cancelLogTask;
+        private Task _logTask;
 
         public MainWindow()
         {
@@ -24,14 +22,13 @@ namespace Sample
             cbAutoScroll.IsChecked = true;
 
             logCtrl.ItemAdded += OnLogMessageItemAdded;
-
         }
 
         private void Send_Click(object sender, RoutedEventArgs e)
         {
-            Logger log = LogManager.GetLogger("button");
+            var log = LogManager.GetLogger("button");
 
-            LogLevel level = LogLevel.Trace;
+            var level = LogLevel.Trace;
             if (sender.Equals(btnDebug)) level = LogLevel.Debug;
             if (sender.Equals(btnWarning)) level = LogLevel.Warn;
             if (sender.Equals(btnError)) level = LogLevel.Error;
@@ -39,35 +36,38 @@ namespace Sample
             log.Log(level, tbLogText.Text);
         }
 
-       private void OnLogMessageItemAdded(object o, EventArgs Args )
-       {
-          // Do what you want :)
-          LogEventInfo logInfo = (NLogEvent)Args;
-          if( logInfo.Level >= NLog.LogLevel.Error)
-            SystemSounds.Beep.Play();
-       }
+        private void OnLogMessageItemAdded(object o, EventArgs Args)
+        {
+            // Do what you want :)
+            LogEventInfo logInfo = (NLogEvent)Args;
+            if (logInfo.Level >= LogLevel.Error)
+                SystemSounds.Beep.Play();
+        }
 
         private void Clear_Click(object sender, RoutedEventArgs e)
         {
-           logCtrl.Clear();
+            logCtrl.Clear();
         }
+
         private void TopScroll_Click(object sender, RoutedEventArgs e)
         {
-           logCtrl.ScrollToFirst();
+            logCtrl.ScrollToFirst();
         }
+
         private void BottomScroll_Click(object sender, RoutedEventArgs e)
         {
             logCtrl.ScrollToLast();
         }
+
         private void AutoScroll_Checked(object sender, RoutedEventArgs e)
         {
             logCtrl.AutoScrollToLast = true;
         }
+
         private void AutoScroll_Unchecked(object sender, RoutedEventArgs e)
         {
             logCtrl.AutoScrollToLast = false;
         }
-
 
         private void BackgroundSending_Checked(object sender, RoutedEventArgs e)
         {
@@ -85,21 +85,17 @@ namespace Sample
 
         private void SendLogs(object obj)
         {
-            CancellationToken ct = (CancellationToken)obj;
+            var ct = (CancellationToken)obj;
 
-            int counter = 0;
-            Logger log = NLog.LogManager.GetLogger("task");
+            var counter = 0;
+            var log = LogManager.GetLogger("task");
 
             log.Debug("Backgroundtask started.");
 
-            while (!ct.WaitHandle.WaitOne(2000))
-            {
-                log.Trace(string.Format("Messageno {0} from backgroudtask.", counter++));
-            }
+            while (!ct.WaitHandle.WaitOne(600)) 
+                log.Trace($"Messageno {counter++} from backgroudtask.");
 
             log.Debug("Backgroundtask stopped.");
         }
-
-
     }
 }

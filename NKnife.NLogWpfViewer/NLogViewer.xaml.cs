@@ -7,7 +7,7 @@ using System.Windows.Controls;
 using NLog;
 using NLog.Common;
 
-namespace NLogWpfViewer
+namespace NKnife.NLogWpfViewer
 {
     /// <summary>
     ///     Interaction logic for NLogViewer.xaml

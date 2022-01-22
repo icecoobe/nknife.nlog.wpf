@@ -2,14 +2,14 @@
 using NLog.Common;
 using NLog.Targets;
 
-namespace NLogWpfViewer
+namespace NKnife.NLogWpfViewer
 {
     [Target("NLogViewer")]
     public class NLogViewerTarget : Target
     {
         public event Action<AsyncLogEventInfo> LogReceived;
 
-        protected override void Write(AsyncLogEventInfo logEvent)
+        protected override void Write(NLog.Common.AsyncLogEventInfo logEvent)
         {
             base.Write(logEvent);
 

@@ -1,22 +1,22 @@
 ﻿using System;
 using NLog;
 
-namespace NLogWpfViewer
+namespace NKnife.NLogWpfViewer
 {
     public class NLogEvent : EventArgs
     {
-        public LogEventInfo EventInfo;
+        private readonly LogEventInfo _logEventInfo;
 
-        public NLogEvent(LogEventInfo LogEventInfo)
+        public NLogEvent(LogEventInfo logLogEventInfo)
         {
             // TODO: Complete member initialization
-            EventInfo = LogEventInfo;
+            _logEventInfo = logLogEventInfo;
         }
 
 
         public static implicit operator LogEventInfo(NLogEvent e)
         {
-            return e.EventInfo;
+            return e._logEventInfo;
         }
 
         public static implicit operator NLogEvent(LogEventInfo e)
