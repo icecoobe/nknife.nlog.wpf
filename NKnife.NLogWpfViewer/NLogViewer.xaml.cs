@@ -22,16 +22,18 @@ namespace NKnife.NLogWpfViewer
             InitializeComponent();
 
             if (!DesignerProperties.GetIsInDesignMode(this))
+            {
                 foreach (var target in LogManager.Configuration.AllTargets.Where(t => t is NLogViewerTarget).Cast<NLogViewerTarget>())
                 {
                     IsTargetConfigured = true;
                     target.LogReceived += LogReceived;
                 }
+            }
         }
 
-        public ListView LogView => logView;
-        public ObservableCollection<LogEventViewModel> LogEntries { get; }
-        public bool IsTargetConfigured { get; }
+        public ObservableCollection<LogEventViewModel> LogEntries { get; set; }
+
+        public bool IsTargetConfigured { get; set; }
 
         [Description("Width of time column in pixels")]
         [Category("Data")]
@@ -68,9 +70,34 @@ namespace NKnife.NLogWpfViewer
         [TypeConverter(typeof(BooleanConverter))]
         public bool AutoScrollToLast { get; set; } = true;
 
-        public event EventHandler ItemAdded = delegate { };
+        [Description("Name of Time column.")]
+        [Category("Data")]
+        [TypeConverter(typeof(StringConverter))]
+        public string TimeHeader { get; set; } = "Time";
 
-        protected void LogReceived(AsyncLogEventInfo log)
+        [Description("Name of Logger column.")]
+        [Category("Data")]
+        [TypeConverter(typeof(StringConverter))]
+        public object LoggerNameHeader { get; set; } = "Logger";
+
+        [Description("Name of Level column.")]
+        [Category("Data")]
+        [TypeConverter(typeof(StringConverter))]
+        public object LevelHeader { get; set; } = "Level";
+
+        [Description("Name of Message column.")]
+        [Category("Data")]
+        [TypeConverter(typeof(StringConverter))]
+        public object MessageHeader { get; set; } = "Message";
+
+        [Description("Name of Exception column.")]
+        [Category("Data")]
+        [TypeConverter(typeof(StringConverter))]
+        public object ExceptionHeader { get; set; } = "Exception";
+
+        public event EventHandler ItemAdded;
+
+        protected virtual void LogReceived(AsyncLogEventInfo log)
         {
             var vm = new LogEventViewModel(log.LogEvent);
 
@@ -80,32 +107,33 @@ namespace NKnife.NLogWpfViewer
                     LogEntries.RemoveAt(0);
                 LogEntries.Add(vm);
                 if (AutoScrollToLast) ScrollToLast();
-                ItemAdded(this, (NLogEvent)log.LogEvent);
+                if (ItemAdded != null) 
+                    ItemAdded(this, (NLogEvent)log.LogEvent);
             }));
         }
 
-        public void Clear()
+        public virtual void Clear()
         {
             LogEntries.Clear();
         }
 
-        public void ScrollToFirst()
+        public virtual void ScrollToFirst()
         {
-            if (LogView.Items.Count <= 0) return;
-            LogView.SelectedIndex = 0;
-            ScrollToItem(LogView.SelectedItem);
+            if (_LogView_.Items.Count <= 0) return;
+            _LogView_.SelectedIndex = 0;
+            ScrollToItem(_LogView_.SelectedItem);
         }
 
-        public void ScrollToLast()
+        public virtual void ScrollToLast()
         {
-            if (LogView.Items.Count <= 0) return;
-            LogView.SelectedIndex = LogView.Items.Count - 1;
-            ScrollToItem(LogView.SelectedItem);
+            if (_LogView_.Items.Count <= 0) return;
+            _LogView_.SelectedIndex = _LogView_.Items.Count - 1;
+            ScrollToItem(_LogView_.SelectedItem);
         }
 
-        private void ScrollToItem(object item)
+        private  void ScrollToItem(object item)
         {
-            LogView.ScrollIntoView(item);
+            _LogView_.ScrollIntoView(item);
         }
     }
 }

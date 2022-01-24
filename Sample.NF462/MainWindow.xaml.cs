@@ -19,9 +19,9 @@ namespace Sample
         public MainWindow()
         {
             InitializeComponent();
-            cbAutoScroll.IsChecked = true;
+            _CbAutoScroll_.IsChecked = true;
 
-            logCtrl.ItemAdded += OnLogMessageItemAdded;
+            _LogCtrl_.ItemAdded += OnLogMessageItemAdded;
         }
 
         private void Send_Click(object sender, RoutedEventArgs e)
@@ -46,27 +46,27 @@ namespace Sample
 
         private void Clear_Click(object sender, RoutedEventArgs e)
         {
-            logCtrl.Clear();
+            _LogCtrl_.Clear();
         }
 
         private void TopScroll_Click(object sender, RoutedEventArgs e)
         {
-            logCtrl.ScrollToFirst();
+            _LogCtrl_.ScrollToFirst();
         }
 
         private void BottomScroll_Click(object sender, RoutedEventArgs e)
         {
-            logCtrl.ScrollToLast();
+            _LogCtrl_.ScrollToLast();
         }
 
         private void AutoScroll_Checked(object sender, RoutedEventArgs e)
         {
-            logCtrl.AutoScrollToLast = true;
+            _LogCtrl_.AutoScrollToLast = true;
         }
 
         private void AutoScroll_Unchecked(object sender, RoutedEventArgs e)
         {
-            logCtrl.AutoScrollToLast = false;
+            _LogCtrl_.AutoScrollToLast = false;
         }
 
         private void BackgroundSending_Checked(object sender, RoutedEventArgs e)

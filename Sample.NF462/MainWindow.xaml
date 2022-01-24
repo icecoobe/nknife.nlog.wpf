@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:nlog="clr-namespace:NKnife.NLogWpfViewer;assembly=NKnife.NLogWpfViewer"
         WindowStartupLocation="CenterScreen"
-        Title="NLogWPFControl Sample" Height="640" Width="640">
+        Title="NLogWPFControl Sample" Height="640" Width="640" FontSize="13">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto" />
@@ -14,23 +14,23 @@
 
         <GroupBox Grid.Row="0" Header="Send">
             <StackPanel Orientation="Vertical">
-                <Label x:Name="lblLogText" Content="Text" />
-                <TextBox x:Name="tbLogText" Text="Sample text goes here...." HorizontalAlignment="Stretch" />
-                <StackPanel Orientation="Horizontal">
-                    <Button x:Name="btnVerbose" Content="Verbose" Click="Send_Click" />
-                    <Button x:Name="btnDebug" Content="Debug" Click="Send_Click" />
-                    <Button x:Name="btnWarning" Content="Warning" Click="Send_Click" />
-                    <Button x:Name="btnError" Content="Error" Click="Send_Click" />
+                <Label x:Name="lblLogText" Margin="0,2,0,0" Content="Text" />
+                <TextBox x:Name="tbLogText" Height="30" Text="Sample text goes here...." Padding="2,0,2,0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" VerticalContentAlignment="Center" />
+                <StackPanel Orientation="Horizontal" Height="32">
+                    <Button x:Name="btnVerbose" Margin="1,4,0,0" Padding="10,0" Content="Verbose" Click="Send_Click" />
+                    <Button x:Name="btnDebug" Margin="6,4,0,0" Padding="10,0" Content="Debug" Click="Send_Click" />
+                    <Button x:Name="btnWarning" Margin="6,4,0,0" Padding="10,0" Content="Warning" Click="Send_Click" />
+                    <Button x:Name="btnError" Margin="6,4,0,0" Padding="10,0" Content="Error" Click="Send_Click" />
                 </StackPanel>
             </StackPanel>
         </GroupBox>
         <GroupBox Grid.Row="1" Header="Functions">
             <StackPanel Orientation="Vertical">
-                <StackPanel Orientation="Horizontal">
-                    <Button x:Name="btnClear" Content="Clear" Click="Clear_Click" />
-                    <Button Content="Scroll Top" Click="TopScroll_Click" />
-                    <Button Content="Scroll Bottom" Click="BottomScroll_Click" />
-                    <CheckBox x:Name="cbAutoScroll" Content="Scroll To Last" HorizontalAlignment="Left"
+                <StackPanel Orientation="Horizontal" Height="32">
+                    <Button Margin="1,4,0,0" Padding="10,0" Content="Clear" Click="Clear_Click" />
+                    <Button Margin="6,4,0,0" Padding="10,0" Content="Scroll Top" Click="TopScroll_Click" />
+                    <Button Margin="6,4,0,0" Padding="10,0" Content="Scroll Bottom" Click="BottomScroll_Click" />
+                    <CheckBox x:Name="_CbAutoScroll_" Margin="6,4,0,0" Padding="10,0" Content="Scroll To Last" HorizontalAlignment="Left"
                               VerticalAlignment="Center" Checked="AutoScroll_Checked" Unchecked="AutoScroll_Unchecked" />
                 </StackPanel>
             </StackPanel>
@@ -38,19 +38,20 @@
 
         <GroupBox Grid.Row="2" Header="Autosending">
             <StackPanel Orientation="Vertical">
-                <CheckBox x:Name="chkBackgroundSending" Content="Send logs from background thread."
+                <CheckBox x:Name="_ChkBackgroundSending_" Margin="2,5" Content="Send logs from background thread."
                           Checked="BackgroundSending_Checked" IsChecked="False" Unchecked="BackgroundSending_Unchecked" />
             </StackPanel>
         </GroupBox>
 
 
         <GroupBox Grid.Row="3" Header="NLog WPF Viewer">
-            <nlog:NLogViewer x:Name="logCtrl" 
-                                TimeWidth="AUTO" 
+            <nlog:NLogViewer x:Name="_LogCtrl_" 
+                                TimeHeader="时间"
+                                TimeWidth="140" 
                                 LoggerNameWidth="0" 
-                                LevelWidth="auto"
-                                ExceptionWidth="auto" 
-                                MessageWidth="auto" />
+                                LevelWidth="46"
+                                ExceptionWidth="80" 
+                                MessageWidth="280" ExceptionHeader="异常" LevelHeader="等级" LoggerNameHeader="发生" MessageHeader="信息" />
         </GroupBox>
 
     </Grid>

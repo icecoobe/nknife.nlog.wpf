@@ -10,7 +10,7 @@ using System.Windows;
 [assembly: AssemblyTitle("NKnife.NLogWpfViewer")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("xknife.net")]
 [assembly: AssemblyProduct("NKnife.NLogWpfViewer")]
 [assembly: AssemblyCopyright("Copyright ©  2022")]
 [assembly: AssemblyTrademark("")]

@@ -9,7 +9,6 @@ namespace NKnife.NLogWpfViewer
 
         public NLogEvent(LogEventInfo logLogEventInfo)
         {
-            // TODO: Complete member initialization
             _logEventInfo = logLogEventInfo;
         }
 
