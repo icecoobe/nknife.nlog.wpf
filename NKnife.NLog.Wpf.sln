@@ -3,11 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.32014.148
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NKnife.NLogWpfViewer", "NKnife.NLogWpfViewer\NKnife.NLogWpfViewer.csproj", "{7632C411-3F9F-47DC-890A-04AF41DBAF2C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NKnife.NLog.Wpf", "NKnife.NLog.Wpf\NKnife.NLog.Wpf.csproj", "{7632C411-3F9F-47DC-890A-04AF41DBAF2C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sample.NF462", "Sample.NF462\Sample.NF462.csproj", "{E91AC62F-ABA5-4AE5-8CA2-3A167FD87786}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sample.Net6", "Sample.Net6\Sample.Net6.csproj", "{E8E3F68F-971F-4A1C-AE4C-462C26C94E37}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sample.Net6", "Sample.Net6\Sample.Net6.csproj", "{E8E3F68F-971F-4A1C-AE4C-462C26C94E37}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documents", "Documents", "{E18BA6D5-1E03-450D-9D0E-7AB48B9318FE}"
+	ProjectSection(SolutionItems) = preProject
+		NKnife.NLog.Wpf.nuspec = NKnife.NLog.Wpf.nuspec
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

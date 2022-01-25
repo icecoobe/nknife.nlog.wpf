@@ -1,7 +1,7 @@
 ﻿<Window x:Class="Sample.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:nlog="clr-namespace:NKnife.NLogWpfViewer;assembly=NKnife.NLogWpfViewer"
+        xmlns:nlog="clr-namespace:NKnife.NLog.Wpf;assembly=NKnife.NLog.Wpf"
         WindowStartupLocation="CenterScreen"
         Title="NLogWPFControl Sample" Height="640" Width="640" FontSize="13">
     <Grid>
@@ -43,13 +43,12 @@
             </StackPanel>
         </GroupBox>
 
-
         <GroupBox Grid.Row="3" Header="NLog WPF Viewer">
             <nlog:NLogViewer x:Name="_LogCtrl_" 
                                 TimeHeader="时间"
                                 TimeWidth="140" 
                                 LoggerNameWidth="0" 
-                                LevelWidth="46"
+                                LevelWidth="56"
                                 ExceptionWidth="80" 
                                 MessageWidth="280" ExceptionHeader="异常" LevelHeader="等级" LoggerNameHeader="发生" MessageHeader="信息" />
         </GroupBox>

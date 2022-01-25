@@ -107,9 +107,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\NKnife.NLogWpfViewer\NKnife.NLogWpfViewer.csproj">
+    <ProjectReference Include="..\NKnife.NLog.Wpf\NKnife.NLog.Wpf.csproj">
       <Project>{7632c411-3f9f-47dc-890a-04af41dbaf2c}</Project>
-      <Name>NKnife.NLogWpfViewer</Name>
+      <Name>NKnife.NLog.Wpf</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

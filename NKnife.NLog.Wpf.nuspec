@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>NKnife.NLog.Wpf</id>
+    <version>1.0.0</version>
+    <title>NKnife.NLog.Wpf</title>
+    <authors>Erian Lu</authors>
+    <owners>Erian Lu</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <projectUrl>https://github.com/xknife-erian/nknife.nlog.wpf</projectUrl>
+    <description>NlogViewer is a simple WPF-control to show NLog-logs.</description>
+    <releaseNotes></releaseNotes>
+    <copyright>Copyright 2022</copyright>
+    <tags>NLog,WPF,Control</tags>
+    <dependencies>
+      <dependency id="NLog" version="4.7.0" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="NKnife.NLog.Wpf.dll" target="NKnife.NLog.Wpf.dll" />
+    <file src="NKnife.NLog.Wpf.xml" target="NKnife.NLog.Wpf.xml" />
+  </files>
+</package>

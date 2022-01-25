@@ -1,11 +1,10 @@
-[1]: http://dotnetsolutionsbytomi.blogspot.se/2011/06/creating-awesome-logging-control-with.html
-[nuget]: https://nuget.org/packages/NlogViewer/
+[nuget]: https://www.nuget.org/packages/NKnife.NLog.Wpf/
 ![NuGet](https://img.shields.io/nuget/v/nlogviewer.svg)
 
-NlogViewer
+NKnife.NLog.Wpf
 ==========
 
-NlogViewer is a simple WPF-control to show NLog-logs. It's heavily inspired by [this blog][1].
+NKnife.NLog.Wpf is a simple WPF-control to show NLog-logs. 
 
 ## How to use?
 

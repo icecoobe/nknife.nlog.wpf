@@ -1,9 +1,9 @@
-﻿<UserControl x:Class="NKnife.NLogWpfViewer.NLogViewer"
+﻿<UserControl x:Class="NKnife.NLog.Wpf.NLogViewer"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:nlv="clr-namespace:NKnife.NLogWpfViewer"
+             xmlns:nlv="clr-namespace:NKnife.NLog.Wpf"
              mc:Ignorable="d"
              d:DesignHeight="230" d:DesignWidth="457"
              DataContext="{Binding RelativeSource={RelativeSource Self}}">
@@ -16,6 +16,7 @@
                     <Setter Property="ToolTip" Value="{Binding ToolTip}" />
                     <Setter Property="Background" Value="{Binding Background}" />
                     <Setter Property="Foreground" Value="{Binding Foreground}" />
+                    <Setter Property="FontFamily" Value="Consolas" ></Setter>
                     <Style.Triggers>
                         <Trigger Property="IsSelected" Value="True">
                             <Setter Property="Background" Value="DarkOrange" />

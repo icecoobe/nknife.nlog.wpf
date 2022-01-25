@@ -3,7 +3,7 @@ using System.Media;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
-using NKnife.NLogWpfViewer;
+using NKnife.NLog.Wpf;
 using NLog;
 
 namespace Sample
