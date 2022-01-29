@@ -1,14 +1,12 @@
-﻿<UserControl x:Class="NKnife.NLog.Wpf.NLogViewer"
+﻿<UserControl x:Class="NKnife.NLog.WPF.NLogViewer"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:nlv="clr-namespace:NKnife.NLog.Wpf"
-             mc:Ignorable="d"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:self="clr-namespace:NKnife.NLog.WPF"
+             mc:Ignorable="d" 
              d:DesignHeight="230" d:DesignWidth="457"
              DataContext="{Binding RelativeSource={RelativeSource Self}}">
-    <UserControl.Resources>
-    </UserControl.Resources>
     <Grid>
         <ListView ItemsSource="{Binding LogEntries}" Name="_LogView_">
             <ListView.ItemContainerStyle>
@@ -33,20 +31,20 @@
                 <GridView>
                     <GridView.Columns>
                         <GridViewColumn DisplayMemberBinding="{Binding Time}"
-                                        Header="{Binding RelativeSource={RelativeSource FindAncestor,AncestorType={x:Type nlv:NLogViewer}},Path=TimeHeader}"
-                                        Width="{Binding RelativeSource={RelativeSource FindAncestor,AncestorType={x:Type nlv:NLogViewer}},Path=TimeWidth}" />
+                                        Header="{Binding RelativeSource={RelativeSource FindAncestor,AncestorType={x:Type self:NLogViewer}},Path=TimeHeader}"
+                                        Width="{Binding RelativeSource={RelativeSource FindAncestor,AncestorType={x:Type self:NLogViewer}},Path=TimeWidth}" />
                         <GridViewColumn DisplayMemberBinding="{Binding LoggerName}" 
-                                        Header="{Binding RelativeSource={RelativeSource FindAncestor,AncestorType={x:Type nlv:NLogViewer}},Path=LoggerNameHeader}"
-                                        Width="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type nlv:NLogViewer}}, Path=LoggerNameWidth}" />
+                                        Header="{Binding RelativeSource={RelativeSource FindAncestor,AncestorType={x:Type self:NLogViewer}},Path=LoggerNameHeader}"
+                                        Width="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type self:NLogViewer}}, Path=LoggerNameWidth}" />
                         <GridViewColumn DisplayMemberBinding="{Binding Level}" 
-                                        Header="{Binding RelativeSource={RelativeSource FindAncestor,AncestorType={x:Type nlv:NLogViewer}},Path=LevelHeader}"
-                                        Width="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type nlv:NLogViewer}}, Path=LevelWidth}" />
+                                        Header="{Binding RelativeSource={RelativeSource FindAncestor,AncestorType={x:Type self:NLogViewer}},Path=LevelHeader}"
+                                        Width="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type self:NLogViewer}}, Path=LevelWidth}" />
                         <GridViewColumn DisplayMemberBinding="{Binding FormattedMessage}" 
-                                        Header="{Binding RelativeSource={RelativeSource FindAncestor,AncestorType={x:Type nlv:NLogViewer}},Path=MessageHeader}"
-                                        Width="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type nlv:NLogViewer}}, Path=MessageWidth}" />
+                                        Header="{Binding RelativeSource={RelativeSource FindAncestor,AncestorType={x:Type self:NLogViewer}},Path=MessageHeader}"
+                                        Width="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type self:NLogViewer}}, Path=MessageWidth}" />
                         <GridViewColumn DisplayMemberBinding="{Binding Exception}"
-                                        Header="{Binding RelativeSource={RelativeSource FindAncestor,AncestorType={x:Type nlv:NLogViewer}},Path=ExceptionHeader}"
-                                        Width="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type nlv:NLogViewer}}, Path=ExceptionWidth}" />
+                                        Header="{Binding RelativeSource={RelativeSource FindAncestor,AncestorType={x:Type self:NLogViewer}},Path=ExceptionHeader}"
+                                        Width="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type self:NLogViewer}}, Path=ExceptionWidth}" />
                     </GridView.Columns>
                 </GridView>
             </ListView.View>

@@ -19,17 +19,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="NLog" Version="4.7.13" />
+    <PackageReference Include="NKnife.NLog.WPF" Version="1.2.0" />
   </ItemGroup>
 
   <ItemGroup>
     <Page Include="..\Sample.NF462\MainWindow.xaml" Link="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\NKnife.NLog.WPF\NKnife.NLog.WPF.csproj" />
   </ItemGroup>
 
 </Project>

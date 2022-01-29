@@ -2,7 +2,7 @@
 using NLog.Common;
 using NLog.Targets;
 
-namespace NKnife.NLog.Wpf
+namespace NKnife.NLog.WPF
 {
     [Target("NLogViewer")]
     public class NLogViewerTarget : Target

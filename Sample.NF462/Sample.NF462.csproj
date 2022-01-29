@@ -39,18 +39,9 @@
       <HintPath>..\packages\NLog.4.7.13\lib\net45\NLog.dll</HintPath>
     </Reference>
     <Reference Include="System" />
-    <Reference Include="System.Configuration" />
-    <Reference Include="System.Data" />
     <Reference Include="System.IO.Compression" />
-    <Reference Include="System.Runtime.Serialization" />
-    <Reference Include="System.ServiceModel" />
-    <Reference Include="System.Transactions" />
     <Reference Include="System.Xml" />
-    <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="System.Net.Http" />
     <Reference Include="System.Xaml">
       <RequiredTargetFramework>4.0</RequiredTargetFramework>
     </Reference>
@@ -107,9 +98,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\NKnife.NLog.Wpf\NKnife.NLog.Wpf.csproj">
-      <Project>{7632c411-3f9f-47dc-890a-04af41dbaf2c}</Project>
-      <Name>NKnife.NLog.Wpf</Name>
+    <ProjectReference Include="..\NKnife.NLog.WPF\NKnife.NLog.WPF.csproj">
+      <Project>{6dad873e-9952-41d8-938b-eea0296773f2}</Project>
+      <Name>NKnife.NLog.WPF</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

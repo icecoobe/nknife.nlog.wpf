@@ -1,7 +1,7 @@
 ﻿<Window x:Class="Sample.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:nlog="clr-namespace:NKnife.NLog.Wpf;assembly=NKnife.NLog.Wpf"
+        xmlns:nlog="clr-namespace:NKnife.NLog.WPF;assembly=NKnife.NLog.WPF"
         WindowStartupLocation="CenterScreen"
         Title="NLogWPFControl Sample" Height="640" Width="640" FontSize="13">
     <Grid>

@@ -1,7 +1,7 @@
 ﻿using System;
 using NLog;
 
-namespace NKnife.NLog.Wpf
+namespace NKnife.NLog.WPF
 {
     public class NLogEvent : EventArgs
     {

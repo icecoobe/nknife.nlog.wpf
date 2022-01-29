@@ -3,7 +3,7 @@ using System.Globalization;
 using System.Windows.Media;
 using NLog;
 
-namespace NKnife.NLog.Wpf
+namespace NKnife.NLog.WPF
 {
     public class LogEventViewModel
     {

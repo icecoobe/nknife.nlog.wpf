@@ -1,7 +1,7 @@
-[nuget]: https://www.nuget.org/packages/NKnife.NLog.Wpf/
+[nuget]: https://www.nuget.org/packages/NKnife.NLog.WPF/
 ![NuGet](https://img.shields.io/nuget/v/nlogviewer.svg)
 
-NKnife.NLog.Wpf
+NKnife.NLog.WPF
 ==========
 
 NKnife.NLog.Wpf is a simple WPF-control to show NLog-logs. 
@@ -10,7 +10,7 @@ NKnife.NLog.Wpf is a simple WPF-control to show NLog-logs.
 
 Add a namespace to your Window, like this:
 
-        xmlns:nlog ="clr-namespace:NlogViewer;assembly=NlogViewer"
+        xmlns:nlog ="clr-namespace:NKnife.NLog.WPF;assembly=NKnife.NLog.WPF"
 
 then add the control.
 
@@ -20,7 +20,7 @@ To setup NlogViewer as a target, add the following to your Nlog.config.
 
 ```xml
   <extensions>
-    <add assembly="NlogViewer" />
+    <add assembly="NKnife.NLog.WPF" />
   </extensions>
   <targets>
     <target xsi:type="NlogViewer" name="ctrl" />

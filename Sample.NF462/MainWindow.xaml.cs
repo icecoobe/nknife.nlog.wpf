@@ -3,7 +3,7 @@ using System.Media;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
-using NKnife.NLog.Wpf;
+using NKnife.NLog.WPF;
 using NLog;
 
 namespace Sample
@@ -36,10 +36,10 @@ namespace Sample
             log.Log(level, tbLogText.Text);
         }
 
-        private void OnLogMessageItemAdded(object o, EventArgs Args)
+        private void OnLogMessageItemAdded(object o, EventArgs args)
         {
             // Do what you want :)
-            LogEventInfo logInfo = (NLogEvent)Args;
+            LogEventInfo logInfo = (NLogEvent)args;
             if (logInfo.Level >= LogLevel.Error)
                 SystemSounds.Beep.Play();
         }

@@ -1,16 +1,26 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
+using System.Windows.Shapes;
 using NLog;
 using NLog.Common;
 
-namespace NKnife.NLog.Wpf
+namespace NKnife.NLog.WPF
 {
     /// <summary>
-    ///     Interaction logic for NLogViewer.xaml
+    /// NLogViewer.xaml 的交互逻辑
     /// </summary>
     public partial class NLogViewer : UserControl
     {
@@ -107,7 +117,7 @@ namespace NKnife.NLog.Wpf
                     LogEntries.RemoveAt(0);
                 LogEntries.Add(vm);
                 if (AutoScrollToLast) ScrollToLast();
-                if (ItemAdded != null) 
+                if (ItemAdded != null)
                     ItemAdded(this, (NLogEvent)log.LogEvent);
             }));
         }
@@ -131,7 +141,7 @@ namespace NKnife.NLog.Wpf
             ScrollToItem(_LogView_.SelectedItem);
         }
 
-        private  void ScrollToItem(object item)
+        private void ScrollToItem(object item)
         {
             _LogView_.ScrollIntoView(item);
         }
