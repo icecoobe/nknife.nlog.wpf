@@ -18,7 +18,13 @@ namespace Sample
 
         public MainWindow()
         {
+            var log = LogManager.GetLogger("start");
+            log.Info("1. 控件初始化前");
+
             InitializeComponent();
+
+            log.Info("2. 控件初始化后");
+
             _CbAutoScroll_.IsChecked = true;
 
             _LogCtrl_.ItemAdded += OnLogMessageItemAdded;
